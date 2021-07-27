@@ -1,2 +1,2 @@
-# Challaneges
+# Challenges
 Challenges
