@@ -1,0 +1,12 @@
+
+resource "azurerm_firewall" "firewall" {
+  name                = "testfirewall"
+  location            = var.resource_group
+  resource_group_name = var.location
+
+  ip_configuration {
+    name                 = "configuration"
+    virtual_network_name = azurerm_virtual_network.vnet01.name
+    public_ip_address_id = public_ip.id
+  }
+}
