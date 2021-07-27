@@ -1,0 +1,46 @@
+Chanlenge 3:
+
+We have a nested object, we would like a function that you pass in the object and a key and get back the value. How this is implemented is up to you.
+Example Inputs
+object = {“a”:{“b”:{“c”:”d”}}}
+key = a/b/c
+object = {“x”:{“y”:{“z”:”a”}}}
+key = x/y/z
+value = a
+
+
+Ans :
+
+Following script will return the value of the class value, based on the input key.
+
+
+//function defination which takes 2 inputs - object and key
+def get_value(obj, key)
+    cnt = key.count(':') // if key like a1:a2:a3
+    //for n in range(0, cnt):
+    if (cnt ==0)
+      value = obj.x
+    else if (cnt == 1)
+      value = obj.a2.x
+    else if (cnt == 2)
+      value = obj.a2.a3.x
+    return value;
+
+//nested class
+
+class a1:
+     x = 1
+     class a2:
+            x = 2
+            class a3:
+                 x = 4
+
+
+//creating a object
+obj = a1()
+
+//following function will retun the value based on the input key
+result = get_value(obj, "x:y:z")
+print (result)
+
+
